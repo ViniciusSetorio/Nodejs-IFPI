@@ -1,0 +1,15 @@
+{
+  "name": "aula_dia23",
+  "version": "1.0.0",
+  "description": "",
+  "main": "calculadora.js",
+  "scripts": {
+    "start": "nodemon calculadora.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
