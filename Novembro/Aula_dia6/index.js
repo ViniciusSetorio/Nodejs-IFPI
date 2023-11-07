@@ -6,43 +6,33 @@ app.use(express.json())
 
 const users = [
   {
-    nome: "Fulinaldo Nogueira",
-    dataNascimento: 1500,
-    endereco: "Rua travessa do pau ferrado",
+    nome: "Kauê",
+    dataNascimento: 2005,
+    endereco: "Rua Chico",
   },
   {
-    nome: "Nobrinaldo Nogueira",
-    dataNascimento: 1500,
-    endereco: "Rua travessa do pau redondo",
-  },
-  {
-    nome: "Arthur Chique",
-    dataNascimento: 2,
-    endereco: "Rua Chicolândia",
-  },
-  {
-    nome: "Luisoão juniosr",
-    dataNascimento: 90000000000000000000000,
-    endereco: "D E S C O N H E C I D O",
-  },
+    nome: "Artur",
+    dataNascimento: 2005,
+    endereco: "Rua Chico",
+  }
 ];
 
 app.get('/user', (req, res) => {
-    res.json(users)
+    res.send(users)
 })
 
 app.post('/user', (req, res) => {
-    const usuario = req.body
-    users.push(usuario)
+    const user = req.body
+    users.push(user)
     res.json(users)
 })
 
-app.delete("/user/:id", (req, res) => {
-    const id = req.params['id']
-    console.log(users.splice(id,1))
+app.delete('/user/:id', (req, res) => {
+    const id = req.params.id
+    console.log(users.splice(id, 1))
     res.json(users)
-});
+})
 
 app.listen(3000, () => {
-    console.log('Servidor rodando em http://localhost:3000');
+    console.log("Server rodando na porta http://localhost:3000")
 })
